@@ -4,7 +4,6 @@ version = "0.1.0"
 dependencies = [
  "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
- "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
