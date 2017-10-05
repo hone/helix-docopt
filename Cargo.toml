@@ -1,7 +1,7 @@
 [package]
 name = "helix_docopt"
 version = "0.1.0"
-authors = ["Terence Lee <hone02@gmail.com>"]
+authors = ["Terence Lee <hone02@gmail.com>", "Godfrey Chan <godfreykfc@gmail.com>"]
 
 [lib]
 
