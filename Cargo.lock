@@ -4,7 +4,7 @@ version = "0.1.0"
 dependencies = [
  "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
- "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -23,14 +23,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "cstr-macro"
 version = "0.1.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
 
 [[package]]
 name = "docopt"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.15 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.15 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -40,30 +40,30 @@ dependencies = [
 [[package]]
 name = "helix"
 version = "0.7.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
 dependencies = [
  "cslice 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
- "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
  "libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
 ]
 
 [[package]]
 name = "lazy_static"
-version = "0.2.8"
+version = "0.2.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "libc"
-version = "0.2.21"
+version = "0.2.31"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "libcruby-sys"
 version = "0.7.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
 dependencies = [
- "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -71,7 +71,7 @@ name = "memchr"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -148,7 +148,7 @@ name = "thread_local"
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -181,8 +181,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
 "checksum docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3b5b93718f8b3e5544fcc914c43de828ca6c6ace23e0332c6080a2977b49787a"
 "checksum helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
-"checksum lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "3b37545ab726dd833ec6420aaba8231c5b320814b9029ad585555d2a03e94fbf"
-"checksum libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)" = "88ee81885f9f04bff991e306fea7c1c60a5f0f9e409e99f6b40e3311a3363135"
+"checksum lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)" = "c9e5e58fa1a4c3b915a561a78a22ee0cac6ab97dca2504428bc1cb074375f8d5"
+"checksum libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "d1419b2939a0bc44b77feb34661583c7546b532b192feab36249ab584b86856c"
 "checksum libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
 "checksum memchr 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1dbccc0e46f1ea47b9f17e6d67c5a96bd27030519c519c9c91327e31275a47b4"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
