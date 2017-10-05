@@ -5,7 +5,7 @@ extern crate libc;
 
 use docopt::ArgvMap;
 use helix::sys::VALUE;
-use helix::{FromRuby, ToError, ToRuby, ToRubyResult, sys};
+use helix::{ToError, ToRuby, ToRubyResult, sys};
 
 extern "C" {
     pub fn rb_ary_entry(array: VALUE, offset: isize) -> VALUE;
@@ -13,9 +13,6 @@ extern "C" {
 
 #[derive(Clone,Debug)]
 struct MyArgvMap(ArgvMap);
-
-#[derive(Clone,Debug)]
-struct MyVec<T>(Vec<T>);
 
 impl helix::FromRuby for MyArgvMap {
     type Checked = ();
@@ -29,34 +26,6 @@ impl helix::FromRuby for MyArgvMap {
     }
 }
 
-impl<T: FromRuby> helix::FromRuby for MyVec<T> {
-    type Checked = Vec<T::Checked>;
-
-    fn from_ruby(value: VALUE) -> helix::CheckResult<Self::Checked> {
-        if unsafe { sys::RB_TYPE_P(value, sys::T_ARRAY) } {
-            let len = unsafe { sys::RARRAY_LEN(value) };
-            let mut checked = Vec::with_capacity(len as usize);
-
-            for i in 0..len {
-                let entry = unsafe { rb_ary_entry(value, i) };
-
-                match T::from_ruby(entry){
-                    Ok(v) => checked.push(v),
-                    Err(e) => return Err(e),
-                }
-            }
-
-            Ok(checked)
-        } else {
-            Err("No implicit conversion into ArgvMap".to_error())
-        }
-    }
-
-    fn from_checked(checked: Self::Checked) -> Self {
-        MyVec(checked.into_iter().map(T::from_checked).collect())
-    }
-}
-
 ruby! {
     class Docopt {
         struct {
@@ -67,8 +36,7 @@ ruby! {
             Docopt { helix, options }
         }
 
-        def parse(usage: String, argv: MyVec<String>) -> Result<Docopt, String> {
-            let argv = argv.0;
+        def parse(usage: String, argv: Vec<String>) -> Result<Docopt, String> {
             let result = docopt::Docopt::new(usage)
                 .and_then(|d| d.help(false).argv(argv.into_iter()).parse());
 
