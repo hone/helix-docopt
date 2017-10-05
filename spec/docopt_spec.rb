@@ -27,7 +27,7 @@ describe "Docopt" do
     argv = "naval_fate --help".split
 
     options = Docopt.parse(USAGE, argv)
-    expect(options.get_bool("--help")).to be_true
+    expect(options.get_bool("--help")).to be true
     #expect(options["--help"]).to be_true
   end
 end
