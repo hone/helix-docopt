@@ -1,3 +1,3 @@
-module Docopt
+module HelixDocopt
   VERSION = "0.1.0"
 end

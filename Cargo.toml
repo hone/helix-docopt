@@ -1,5 +1,5 @@
 [package]
-name = "rbdocopt"
+name = "helix_docopt"
 version = "0.1.0"
 authors = ["Terence Lee <hone02@gmail.com>"]
 
@@ -9,4 +9,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 docopt = "0.8.1"
-helix = { git = "https://github.com/tildeio/helix" }
+helix = "0.7.0"

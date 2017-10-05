@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'helix_runtime', github: 'tildeio/helix'
+gem 'helix_runtime', '~> 0.7.0'
 
 group :development do
   gem 'rake', '~> 10.0'
