@@ -4,7 +4,11 @@ extern crate docopt;
 
 use docopt::ArgvMap;
 use helix::sys::VALUE;
-use helix::{FromRuby, sys, ToError};
+use helix::{FromRuby, ToError, sys};
+
+extern "C" {
+    pub fn rb_ary_entry(array: VALUE, offset: isize) -> VALUE;
+}
 
 #[derive(Clone,Debug)]
 struct MyArgvMap(ArgvMap);
@@ -15,12 +19,11 @@ struct MyVec<T>(Vec<T>);
 impl helix::FromRuby for MyArgvMap {
     type Checked = ();
 
-    #[warn(unused_variables)]
-    fn from_ruby(value: VALUE) -> helix::CheckResult<Self::Checked> {
-        Err("No implicit conversion into ArgvMap".to_error())
+    fn from_ruby(_: VALUE) -> helix::CheckResult<Self::Checked> {
+        Err("Use Docopt.parse()".to_error())
     }
 
-    fn from_checked(checked: Self::Checked) -> MyArgvMap {
+    fn from_checked(_: Self::Checked) -> MyArgvMap {
         unreachable!()
     }
 }
@@ -31,11 +34,12 @@ impl<T: FromRuby> helix::FromRuby for MyVec<T> {
     fn from_ruby(value: VALUE) -> helix::CheckResult<Self::Checked> {
         if unsafe { sys::RB_TYPE_P(value, sys::T_ARRAY) } {
             let len = unsafe { sys::RARRAY_LEN(value) };
-            let ptr = unsafe { sys::RARRAY_PTR(value) };
             let mut checked = Vec::with_capacity(len as usize);
+
             for i in 0..len {
-                let entry = unsafe { ptr.offset(i) };
-                match T::from_ruby(unsafe { std::mem::transmute(entry) }){
+                let entry = unsafe { rb_ary_entry(value, i) };
+
+                match T::from_ruby(entry){
                     Ok(v) => checked.push(v),
                     Err(e) => return Err(e),
                 }
@@ -43,7 +47,7 @@ impl<T: FromRuby> helix::FromRuby for MyVec<T> {
 
             Ok(checked)
         } else {
-        Err("No implicit conversion into ArgvMap".to_error())
+            Err("No implicit conversion into ArgvMap".to_error())
         }
     }
 
@@ -62,26 +66,24 @@ ruby! {
             Docopt { helix, options }
         }
 
-        def parse(usage: String, argv: MyVec<String>) -> Option<Docopt> {
+        def parse(usage: String, argv: MyVec<String>) -> Result<Docopt, String> {
             let argv = argv.0;
             let result = docopt::Docopt::new(usage)
                 .and_then(|d| d.help(false).argv(argv.into_iter()).parse());
 
             match result {
-                Ok(args) => Some(Docopt::new(MyArgvMap(args))),
+                Ok(args) => Ok(Docopt::new(MyArgvMap(args)))
                 Err(error) => match error {
                     docopt::Error::WithProgramUsage(e, msg) => {
-                        println!("{:?}", msg);
-                        None
+                        Err(format!("{}\n\n{}\n", e, msg))
                     },
                     e => {
-                        println!("ERROR: {:?}", e);
-                        None
+                        Err(format!("{}", e))
                     }
                 }
             }
         }
-        
+
         def get_bool(&self, key: String) -> bool {
             self.options.0.get_bool(&key)
         }
