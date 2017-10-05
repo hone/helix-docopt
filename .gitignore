@@ -1,0 +1,4 @@
+.bundle
+lib/helix_docopt/native.*
+target/
+vendor/bundle
