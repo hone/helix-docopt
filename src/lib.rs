@@ -119,17 +119,5 @@ ruby! {
                 },
             }
         }
-
-        def get_bool(&self, key: String) -> bool {
-            self.options.0.get_bool(&key)
-        }
-
-        def log(&self, string: String) {
-            println!("{}", string);
-        }
-
-        def inspect(&self) {
-            println!("{:?}", self)
-        }
     }
 }
