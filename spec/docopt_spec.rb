@@ -28,6 +28,6 @@ describe "Docopt" do
 
     options = Docopt.parse(USAGE, argv)
     expect(options.get_bool("--help")).to be true
-    #expect(options["--help"]).to be_true
+    expect(options["--help"]).to be true
   end
 end

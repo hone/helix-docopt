@@ -3,7 +3,8 @@ name = "helix_docopt"
 version = "0.1.0"
 dependencies = [
  "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "helix 0.7.0 (git+https://github.com/tildeio/helix)",
+ "helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
+ "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -22,7 +23,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "cstr-macro"
 version = "0.1.0"
-source = "git+https://github.com/tildeio/helix#37b2f2f3e9145e8183a08570c2f29853b3ab99bc"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
 
 [[package]]
 name = "docopt"
@@ -39,12 +40,12 @@ dependencies = [
 [[package]]
 name = "helix"
 version = "0.7.0"
-source = "git+https://github.com/tildeio/helix#37b2f2f3e9145e8183a08570c2f29853b3ab99bc"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
 dependencies = [
  "cslice 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "cstr-macro 0.1.0 (git+https://github.com/tildeio/helix)",
+ "cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
  "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
- "libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix)",
+ "libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
 ]
 
 [[package]]
@@ -60,7 +61,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "libcruby-sys"
 version = "0.7.0"
-source = "git+https://github.com/tildeio/helix#37b2f2f3e9145e8183a08570c2f29853b3ab99bc"
+source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ce8f4430bc793ef5f246426abe519bbad4125466"
 dependencies = [
  "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -177,12 +178,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [metadata]
 "checksum aho-corasick 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = "500909c4f87a9e52355b26626d890833e9e1d53ac566db76c36faa984b889699"
 "checksum cslice 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "0f8cb7306107e4b10e64994de6d3274bd08996a7c1322a27b86482392f96be0a"
-"checksum cstr-macro 0.1.0 (git+https://github.com/tildeio/helix)" = "<none>"
+"checksum cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
 "checksum docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3b5b93718f8b3e5544fcc914c43de828ca6c6ace23e0332c6080a2977b49787a"
-"checksum helix 0.7.0 (git+https://github.com/tildeio/helix)" = "<none>"
+"checksum helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
 "checksum lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "3b37545ab726dd833ec6420aaba8231c5b320814b9029ad585555d2a03e94fbf"
 "checksum libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)" = "88ee81885f9f04bff991e306fea7c1c60a5f0f9e409e99f6b40e3311a3363135"
-"checksum libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix)" = "<none>"
+"checksum libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
 "checksum memchr 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1dbccc0e46f1ea47b9f17e6d67c5a96bd27030519c519c9c91327e31275a47b4"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum regex 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "1731164734096285ec2a5ec7fea5248ae2f5485b3feeb0115af4fda2183b2d1b"
