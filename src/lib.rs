@@ -72,7 +72,7 @@ ruby! {
                 .and_then(|d| d.help(false).argv(argv.into_iter()).parse());
 
             match result {
-                Ok(args) => Ok(Docopt::new(MyArgvMap(args)))
+                Ok(args) => Ok(Docopt::new(MyArgvMap(args))),
                 Err(error) => match error {
                     docopt::Error::WithProgramUsage(e, msg) => {
                         Err(format!("{}\n\n{}\n", e, msg))
