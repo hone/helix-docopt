@@ -1,11 +1,3 @@
-[root]
-name = "helix_docopt"
-version = "0.1.0"
-dependencies = [
- "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
-]
-
 [[package]]
 name = "aho-corasick"
 version = "0.6.3"
@@ -15,14 +7,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "cslice"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
 name = "cstr-macro"
 version = "0.1.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "docopt"
@@ -38,13 +25,20 @@ dependencies = [
 
 [[package]]
 name = "helix"
-version = "0.7.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "cslice 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
+ "cstr-macro 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
- "libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)",
+ "libcruby-sys 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "helix_docopt"
+version = "0.1.0"
+dependencies = [
+ "docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "helix 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -59,8 +53,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "libcruby-sys"
-version = "0.7.0"
-source = "git+https://github.com/tildeio/helix?branch=hone-array-coercions#ff2a9d2a59d3800fe69691b985afbbbd9b5262f8"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -176,13 +170,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [metadata]
 "checksum aho-corasick 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = "500909c4f87a9e52355b26626d890833e9e1d53ac566db76c36faa984b889699"
-"checksum cslice 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "0f8cb7306107e4b10e64994de6d3274bd08996a7c1322a27b86482392f96be0a"
-"checksum cstr-macro 0.1.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
+"checksum cstr-macro 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "db53fddba18cdd35477a7213a3ef6acfbfa333c31b42ce019e544c4a1420a06f"
 "checksum docopt 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3b5b93718f8b3e5544fcc914c43de828ca6c6ace23e0332c6080a2977b49787a"
-"checksum helix 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
+"checksum helix 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)" = "1a5e45d09f37327fded2b1e0939ab4c061e181b0c007f82c53ccd03e869cf085"
 "checksum lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)" = "c9e5e58fa1a4c3b915a561a78a22ee0cac6ab97dca2504428bc1cb074375f8d5"
 "checksum libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "d1419b2939a0bc44b77feb34661583c7546b532b192feab36249ab584b86856c"
-"checksum libcruby-sys 0.7.0 (git+https://github.com/tildeio/helix?branch=hone-array-coercions)" = "<none>"
+"checksum libcruby-sys 0.7.3 (registry+https://github.com/rust-lang/crates.io-index)" = "e8b0fb9beb529127d706dd12e26f961be3e527badb74a7b2e5d6b9d928fe6059"
 "checksum memchr 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1dbccc0e46f1ea47b9f17e6d67c5a96bd27030519c519c9c91327e31275a47b4"
 "checksum quote 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "7a6e920b65c65f10b2ae65c831a81a073a89edd28c7cce89475bff467ab4167a"
 "checksum regex 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "1731164734096285ec2a5ec7fea5248ae2f5485b3feeb0115af4fda2183b2d1b"

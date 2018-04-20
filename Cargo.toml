@@ -9,4 +9,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 docopt = "0.8.1"
-helix = { git = "https://github.com/tildeio/helix", branch = "hone-array-coercions" }
+helix = "0.7.3"
